@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Glo Beauty | Skincare & Makeup Haven</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #fef8f0;
+            color: #2e241f;
+        }
+
+        /* header & navigation */
+        .top-bar {
+            background: #ffffffdd;
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f0e0d0;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c44569, #b5838d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 1rem;
+            background: none;
+            color: #b5838d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5a3e35;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #c44569;
+        }
+
+        .icons {
+            display: flex;
+            gap: 1.2rem;
+            font-size: 1.3rem;
+        }
+
+        /* hero banner */
+        .hero {
+            background: linear-gradient(120deg, #ffe7e0, #ffddd3);
+            margin: 1rem 1.5rem;
+            border-radius: 2rem;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #3b2a23;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-top: 0.8rem;
+            color: #6f4e3c;
+            max-width: 500px;
+        }
+
+        .btn-shop {
+            margin-top: 1.5rem;
+            background: #c44569;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 6px 14px rgba(196, 69, 105, 0.3);
+        }
+
+        .btn-shop:hover {
+            background: #a73456;
+            transform: scale(1.02);
+        }
+
+        /* section titles */
+        .section {
+            padding: 2rem 1.8rem 1rem 1.8rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            border-left: 6px solid #c44569;
+            padding-left: 1rem;
+        }
+
+        .sub {
+            color: #aa7a64;
+            margin-bottom: 1.8rem;
+            margin-left: 1.8rem;
+        }
+
+        /* product grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            padding: 1rem 1.8rem 2rem 1.8rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f7e6dd;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+            border-color: #f0cfc0;
+        }
+
+        .product-img {
+            height: 200px;
+            background: #faf0ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 1.2rem;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #c44569;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0.4rem 0;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #2e241f;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .rating {
+            color: #ffb347;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .add-to-cart {
+            background: #f0e2da;
+            border: none;
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #5a3e35;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background: #e1cec2;
+            color: #c44569;
+        }
+
+        /* banner special */
+        .special-banner {
+            background: #2e241f;
+            color: #fae1d4;
+            margin: 2rem 1.8rem;
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .special-banner h3 {
+            font-size: 1.8rem;
+        }
+
+        /* footer */
+        footer {
+            background: #f1e5de;
+            margin-top: 3rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            color: #6f4e3c;
+        }
+
+        @media (max-width: 680px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="logo">GLŌ BEAUTY <span>✦ clean + vegan</span></div>
+    <div class="nav-links">
+        <a href="#">Skincare</a>
+        <a href="#">Makeup</a>
+        <a href="#">New</a>
+        <a href="#">Rituals</a>
+    </div>
+    <div class="icons">
+        <span>🔍</span>
+        <span>🛍️</span>
+        <span>👤</span>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>glow ritual,<br>your way ✨</h1>
+        <p>Clean ingredients · dermatologist tested · from dewy serums to melt-proof lipsticks.</p>
+        <button class="btn-shop">✨ SHOP BESTSELLERS</button>
+    </div>
+    <div style="font-size: 7rem;">💄🌸</div>
+</div>
+
+<!-- skincare section -->
+<div class="section">
+    <div class="section-title">☁️ skincare essentials</div>
+    <div class="sub">hydrate · repair · protect</div>
+</div>
+<div class="product-grid" id="skincare-grid"></div>
+
+<!-- makeup section -->
+<div class="section">
+    <div class="section-title">💋 makeup must-haves</div>
+    <div class="sub">buildable · high pigment · skin-first</div>
+</div>
+<div class="product-grid" id="makeup-grid"></div>
+
+<!-- special banner -->
+<div class="special-banner">
+    <h3>💕 free mini SPF 50 on orders $45+</h3>
+    <p style="margin-top: 0.5rem;">auto-applied at checkout · while stocks last</p>
+</div>
+
+<footer>
+    <p>© 2025 Glō Beauty — radiance for every skin tone & story.</p>
+    <p style="margin-top: 0.5rem;">✨ cruelty-free · carbon neutral shipping</p>
+</footer>
+
+<script>
+    // ---------- SKINCARE PRODUCTS (9 items) ----------
+    const skincareItems = [
+        { name: "Gentle Milky Cleanser", category: "CLEANSER", price: "$28", rating: "★★★★★", emoji: "🥛", type: "skincare" },
+        { name: "Dewy Vitamin C Serum", category: "TREATMENT", price: "$48", rating: "★★★★½", emoji: "🍊", type: "skincare" },
+        { name: "Niacinamide + Zinc", category: "SERUM", price: "$32", rating: "★★★★☆", emoji: "✨", type: "skincare" },
+        { name: "Hydrating Hyaluronic Acid", category: "MOISTURE", price: "$39", rating: "★★★★★", emoji: "💧", type: "skincare" },
+        { name: "Ultra Rich Ceramide Cream", category: "MOISTURIZER", price: "$44", rating: "★★★★½", emoji: "🧴", type: "skincare" },
+        { name: "Resurfacing AHA Mask", category: "EXFOLIATOR", price: "$36", rating: "★★★★½", emoji: "🍯", type: "skincare" },
+        { name: "Caffeine Eye Cream", category: "EYE CARE", price: "$29", rating: "★★★★☆", emoji: "👁️", type: "skincare" },
+        { name: "Mineral SPF 40", category: "SUN CARE", price: "$35", rating: "★★★★★", emoji: "☀️", type: "skincare" },
+        { name: "Rosehip Night Oil", category: "FACE OIL", price: "$42", rating: "★★★★½", emoji: "🌹", type: "skincare" }
+    ];
+
+    // ---------- MAKEUP PRODUCTS (9 items) ----------
+    const makeupItems = [
+        { name: "Soft Matte Foundation", category: "FACE", price: "$38", rating: "★★★★½", emoji: "🎨", type: "makeup" },
+        { name: "Radiant Concealer", category: "FACE", price: "$24", rating: "★★★★★", emoji: "🌟", type: "makeup" },
+        { name: "Blurring Powder", category: "FACE", price: "$30", rating: "★★★★☆", emoji: "🍑", type: "makeup" },
+        { name: "Desert Rose Blush", category: "CHEEKS", price: "$26", rating: "★★★★½", emoji: "🌸", type: "makeup" },
+        { name: "Sun Sculpt Bronzer", category: "CHEEKS", price: "$31", rating: "★★★★☆", emoji: "🌞", type: "makeup" },
+        { name: "Glass Light Highlighter", category: "CHEEKS", price: "$28", rating: "★★★★★", emoji: "✨", type: "makeup" },
+        { name: "Velvet Lipstick - Rose", category: "LIPS", price: "$22", rating: "★★★★½", emoji: "💄", type: "makeup" },
+        { name: "Lip Plumping Gloss", category: "LIPS", price: "$19", rating: "★★★★☆", emoji: "🍒", type: "makeup" },
+        { name: "24H Micro Eyeliner", category: "EYES", price: "$16", rating: "★★★★★", emoji: "✍️", type: "makeup" }
+    ];
+
+    function createProductCard(product) {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="product-img">${product.emoji}</div>
+            <div class="product-info">
+                <div class="product-category">${product.category}</div>
+                <div class="product-name">${product.name}</div>
+                <div class="price">${product.price}</div>
+                <div class="rating">${product.rating}</div>
+                <button class="add-to-cart">🛍️ Add to bag</button>
+            </div>
+        `;
+        // simple click alert for demo (add to cart interactive)
+        const btn = card.querySelector('.add-to-cart');
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            alert(`✨ "${product.name}" added to your bag. keep glowing!`);
+        });
+        return card;
+    }
+
+    // render skincare grid
+    const skincareGrid = document.getElementById('skincare-grid');
+    skincareItems.forEach(item => {
+        skincareGrid.appendChild(createProductCard(item));
+    });
+
+    // render makeup grid
+    const makeupGrid = document.getElementById('makeup-grid');
+    makeupItems.forEach(item => {
+        makeupGrid.appendChild(createProductCard(item));
+    });
+
+    // extra bonus: interactive shop now button
+    const shopBtn = document.querySelector('.btn-shop');
+    if(shopBtn) {
+        shopBtn.addEventListener('click', () => {
+            alert('✨ Explore our award-winning skincare & makeup collections ✨');
+        });
+    }
+</script>
+</body>
+</html>
